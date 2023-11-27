@@ -17,6 +17,8 @@ const ROUTE_MAP = {
   "": { redirect: "home" },
   home: (props) => <Home {...props} />,
   about: (props) => <About {...props} />,
+  about: (props) => <About {...props} />,
+  about: (props) => <About {...props} />,
   "sys/uuAppWorkspace/initUve": (props) => <InitAppWorkspace {...props} />,
   controlPanel: (props) => <ControlPanel {...props} />,
   "*": () => (

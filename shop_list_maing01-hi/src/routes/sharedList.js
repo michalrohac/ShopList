@@ -28,7 +28,7 @@ const Css = {
 
 let Home = createVisualComponent({
   //@@viewOn:statics
-  uu5Tag: Config.TAG + "Home",
+  uu5Tag: Config.TAG + "SharedLists",
   //@@viewOff:statics
 
   //@@viewOn:propTypes
@@ -53,29 +53,7 @@ let Home = createVisualComponent({
       <div {...attrs}>
         <RouteBar />
         <WelcomeRow left={<Plus4U5Elements.PersonPhoto size="xl" borderRadius="none" />}>
-          <Uu5Elements.Text category="story" segment="heading" type="h2">
-            <Lsi import={importLsi} path={["Home", "welcome"]} />
-          </Uu5Elements.Text>
-          {identity && (
-            <Uu5Elements.Text category="story" segment="heading" type="h2">
-              {identity.name}
-            </Uu5Elements.Text>
-          )}
-        </WelcomeRow>
-        <WelcomeRow left={<Uu5Elements.Icon icon="mdi-human-greeting" className={Css.icon()} />}>
-          <Uu5Elements.Text category="story" segment="body" type="common">
-            <Lsi import={importLsi} path={["Home", "intro"]} />
-          </Uu5Elements.Text>
-        </WelcomeRow>
-        <WelcomeRow left={<Uu5Elements.Icon icon="mdi-monitor" className={Css.icon()} />}>
-          <Uu5Elements.Text category="story" segment="body" type="common">
-            <Lsi import={importLsi} path={["Home", "clientSide"]} />
-          </Uu5Elements.Text>
-        </WelcomeRow>
-        <WelcomeRow left={<Uu5Elements.Icon icon="mdi-server" className={Css.icon()} />}>
-          <Uu5Elements.Text category="story" segment="body" type="common">
-            <Lsi import={importLsi} path={["Home", "serverSide"]} />
-          </Uu5Elements.Text>
+          <Text>Test</Text>
         </WelcomeRow>
       </div>
     );

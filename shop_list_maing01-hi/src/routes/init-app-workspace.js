@@ -132,7 +132,7 @@ let InitAppWorkspace = createVisualComponent({
   //@@viewOff:render
 });
 
-InitAppWorkspace = withRoute(InitAppWorkspace, { authenticated: true });
+//InitAppWorkspace = withRoute(InitAppWorkspace, { authenticated: true });
 
 //@@viewOn:exports
 export { InitAppWorkspace };

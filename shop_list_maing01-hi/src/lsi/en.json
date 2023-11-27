@@ -32,5 +32,11 @@
   "Menu": {
     "home": "Welcome",
     "about": "About Application"
+  },
+  "ShopList": {
+    "new": "New shopping list",
+    "myLists": "My shopping lists",
+    "archived": "Completed shopping lists",
+    "sharedLists": "Shared shopping lists"
   }
 }

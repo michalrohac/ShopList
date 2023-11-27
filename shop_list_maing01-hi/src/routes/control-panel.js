@@ -84,7 +84,7 @@ let ControlPanel = createVisualComponent({
   },
 });
 
-ControlPanel = withRoute(ControlPanel, { authenticated: true });
+//ControlPanel = withRoute(ControlPanel, { authenticated: true });
 
 //@@viewOn:exports
 export { ControlPanel };
