@@ -49,11 +49,9 @@ const SharedList = createVisualComponent({
       <div {...attrs}>
         <RouteBar />
         <div>List you share with others members and their lists shared with you.</div>
-        <WelcomeRow left={<Plus4U5Elements.PersonPhoto size="xl" borderRadius="none" />}>
-          TEST - shared lists
-        </WelcomeRow>
+        <WelcomeRow>TEST - shared lists</WelcomeRow>
       </div>
-    );
+    ); //:null;
   },
   //@@viewOff:render
 });

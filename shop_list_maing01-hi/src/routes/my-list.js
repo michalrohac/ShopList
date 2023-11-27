@@ -1,6 +1,9 @@
 //@@viewOn:imports
 import { createVisualComponent, Utils, Content } from "uu5g05";
 import Config from "./config/config.js";
+import WelcomeRow from "../bricks/welcome-row.js";
+import RouteBar from "../core/route-bar.js";
+import importLsi from "../lsi/import-lsi.js";
 //@@viewOff:imports
 
 //@@viewOn:constants
@@ -39,15 +42,16 @@ const MyList = createVisualComponent({
 
     //@@viewOn:render
     const attrs = Utils.VisualComponent.getAttrs(props, Css.main());
-    const currentNestingLevel = Utils.NestingLevel.getNestingLevel(props, MyList);
+    //const currentNestingLevel = Utils.NestingLevel.getNestingLevel(props, MyList);
 
-    return currentNestingLevel ? (
+    return (
+      //currentNestingLevel ? (
       <div {...attrs}>
         <RouteBar />
         <div>List you share with others members and their lists shared with you.</div>
-        <WelcomeRow left={<Plus4U5Elements.PersonPhoto size="xl" borderRadius="none" />}>TEST - my lists</WelcomeRow>
+        <WelcomeRow>TEST - my lists</WelcomeRow>
       </div>
-    ) : null;
+    ); // : null;
     //@@viewOff:render
   },
 });

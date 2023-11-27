@@ -19,7 +19,7 @@ const About = {
   },
   leadingAuthors: [
     {
-      name: "Some Name",
+      name: "Michal Rohac",
       uuIdentity: "4-4-1",
       role: "Chief Business Architect & Stakeholder",
     },
