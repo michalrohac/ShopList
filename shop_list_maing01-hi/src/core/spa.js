@@ -9,6 +9,13 @@ import Home from "../routes/home.js";
 //@@viewOff:imports
 
 //@@viewOn:constants
+//@@my routes
+const NewList = Utils.Component.lazy(() => import("../routes/new-list.js"));
+const MyList = Utils.Component.lazy(() => import("../routes/my-list.js"));
+const SharedList = Utils.Component.lazy(() => import("../routes/shared-list.js"));
+const CompletedList = Utils.Component.lazy(() => import("../routes/completed-list.js"));
+
+//@@my routes end
 const About = Utils.Component.lazy(() => import("../routes/about.js"));
 const InitAppWorkspace = Utils.Component.lazy(() => import("../routes/init-app-workspace.js"));
 const ControlPanel = Utils.Component.lazy(() => import("../routes/control-panel.js"));
@@ -16,8 +23,10 @@ const ControlPanel = Utils.Component.lazy(() => import("../routes/control-panel.
 const ROUTE_MAP = {
   "": { redirect: "home" },
   home: (props) => <Home {...props} />,
-  about: (props) => <About {...props} />,
-  about: (props) => <About {...props} />,
+  newList: (props) => <NewList {...props} />,
+  myList: (props) => <MyList {...props} />,
+  sharedList: (props) => <SharedList {...props} />,
+  completedList: (props) => <CompletedList {...props} />,
   about: (props) => <About {...props} />,
   "sys/uuAppWorkspace/initUve": (props) => <InitAppWorkspace {...props} />,
   controlPanel: (props) => <ControlPanel {...props} />,

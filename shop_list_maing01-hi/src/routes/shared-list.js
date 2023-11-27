@@ -1,9 +1,5 @@
 //@@viewOn:imports
-import { Utils, createVisualComponent, useSession, Lsi } from "uu5g05";
-import Uu5Elements from "uu5g05-elements";
-import Plus4U5Elements from "uu_plus4u5g02-elements";
-import { withRoute } from "uu_plus4u5g02-app";
-
+import { createVisualComponent, Utils, Content } from "uu5g05";
 import Config from "./config/config.js";
 import WelcomeRow from "../bricks/welcome-row.js";
 import RouteBar from "../core/route-bar.js";
@@ -15,20 +11,17 @@ import importLsi from "../lsi/import-lsi.js";
 
 //@@viewOn:css
 const Css = {
-  icon: () =>
-    Config.Css.css({
-      fontSize: 48,
-      lineHeight: "1em",
-    }),
+  main: () => Config.Css.css({}),
 };
 //@@viewOff:css
 
 //@@viewOn:helpers
 //@@viewOff:helpers
 
-let Home = createVisualComponent({
+const SharedList = createVisualComponent({
   //@@viewOn:statics
-  uu5Tag: Config.TAG + "SharedLists",
+  uu5Tag: Config.TAG + "SharedList",
+  //nestingLevel: ["areaCollection", "area"],
   //@@viewOff:statics
 
   //@@viewOn:propTypes
@@ -41,29 +34,31 @@ let Home = createVisualComponent({
 
   render(props) {
     //@@viewOn:private
-    const { identity } = useSession();
+    const { children } = props;
     //@@viewOff:private
 
     //@@viewOn:interface
     //@@viewOff:interface
 
     //@@viewOn:render
-    const attrs = Utils.VisualComponent.getAttrs(props);
+    const attrs = Utils.VisualComponent.getAttrs(props, Css.main());
+    //const currentNestingLevel = Utils.NestingLevel.getNestingLevel(props, SharedList);
+
     return (
+      //currentNestingLevel ? (
       <div {...attrs}>
         <RouteBar />
+        <div>List you share with others members and their lists shared with you.</div>
         <WelcomeRow left={<Plus4U5Elements.PersonPhoto size="xl" borderRadius="none" />}>
-          <Text>Test</Text>
+          TEST - shared lists
         </WelcomeRow>
       </div>
     );
-    //@@viewOff:render
   },
+  //@@viewOff:render
 });
 
-//Home = withRoute(Home, { authenticated: true });
-
 //@@viewOn:exports
-export { Home };
-export default Home;
+export { SharedList };
+export default SharedList;
 //@@viewOff:exports

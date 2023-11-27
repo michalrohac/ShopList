@@ -42,7 +42,7 @@ const RouteBar = createVisualComponent({
       },
       {
         children: <Lsi import={importLsi} path={["ShopList", "archived"]} />,
-        onClick: () => setRoute("completedList"),
+        onClick: () => setRoute("completedLists"),
       },
       {
         children: <Lsi import={importLsi} path={["Menu", "about"]} />,
