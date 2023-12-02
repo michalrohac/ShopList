@@ -93,6 +93,12 @@ const Tile = createVisualComponent({
         </div>
         <Box significance="distinct">
           {`Average rating: ${props.joke.averageRating.toFixed(props.joke.averageRating % 1 ? 1 : 0)} / 5`}
+          <Button
+            icon="uubmlstencil-uuappdesignkit-bullet-list"
+            onClick={handleUpdate}
+            significance="subdued"
+            tooltip="Show list"
+          />
           <Button icon="mdi-pencil" onClick={handleUpdate} significance="subdued" tooltip="Update" />
           <Button icon="mdi-delete" onClick={handleDelete} significance="subdued" tooltip="Delete" />
         </Box>

@@ -1,10 +1,13 @@
 //@@viewOn:imports
 import { createVisualComponent, Utils, Content } from "uu5g05";
+import { withRoute } from "uu_plus4u5g02-app";
 import Config from "./config/config.js";
 import WelcomeRow from "../bricks/welcome-row.js";
 import RouteBar from "../core/route-bar.js";
 import importLsi from "../lsi/import-lsi.js";
-import Tile from "../bricks/shop-list/tile";
+import Tile from "../bricks/shop-list/tile.js";
+import ListProvider from "../bricks/shop-list/list-provider";
+import ListView from "../bricks/shop-list/list-view";
 //@@viewOff:imports
 
 //@@viewOn:constants
@@ -45,9 +48,9 @@ const Css = {
 //@@viewOn:helpers
 //@@viewOff:helpers
 
-const MyList = createVisualComponent({
+const NewList = createVisualComponent({
   //@@viewOn:statics
-  uu5Tag: Config.TAG + "MyList",
+  uu5Tag: Config.TAG + "NewList",
   //nestingLevel: ["areaCollection", "area"],
   //@@viewOff:statics
 
@@ -62,21 +65,6 @@ const MyList = createVisualComponent({
   render(props) {
     //@@viewOn:private
     const { children } = props;
-    function handleUpdate(event) {
-      alert(
-        `You want to update joke ${event.data.name} and you ${
-          event.ctrlKey || event.metaKey ? "have" : "haven't"
-        } used CTRL or META key.`
-      );
-    }
-
-    function handleDelete(event) {
-      alert(
-        `You want to delete joke ${event.data.name}  and you ${
-          event.ctrlKey || event.metaKey ? "have" : "haven't"
-        } used CTRL or META key.`
-      );
-    }
     //@@viewOff:private
 
     //@@viewOn:interface
@@ -84,57 +72,21 @@ const MyList = createVisualComponent({
 
     //@@viewOn:render
     const attrs = Utils.VisualComponent.getAttrs(props, Css.main());
-    //const currentNestingLevel = Utils.NestingLevel.getNestingLevel(props, MyList);
+    //const currentNestingLevel = Utils.NestingLevel.getNestingLevel(props, NewList);
 
     return (
-      //currentNestingLevel ? (
-      <div {...attrs}>
+      <>
         <RouteBar />
-        <div>List you share with others members and their lists shared with you.</div>
-        <WelcomeRow>TEST - my lists</WelcomeRow>
-        <Tile
-          joke={{
-            name: "Bunny ate the wedding ring!",
-            text: "Why did the bunny eat the wedding ring? Because he heard it was 18 carrots!",
-            averageRating: 4,
-            uuIdentityName: "John Smith",
-            sys: { cts: "2022-03-17T09:48:38.990Z" },
-          }}
-          onDelete={handleDelete}
-          onUpdate={handleUpdate}
-          style={{ width: 640, margin: "24px auto" }}
-        />
-        <Tile
-          joke={{
-            name: "F5",
-            text: "I love the F5 key. It´s just so refreshing.",
-            averageRating: 3,
-            uuIdentityName: "Harry Potter",
-            sys: { cts: "2022-02-14T10:48:38.990Z" },
-          }}
-          onDelete={handleDelete}
-          onUpdate={handleUpdate}
-          style={{ width: 640, margin: "24px auto" }}
-        />
-        <Tile
-          joke={{
-            name: "Random image",
-            imageUrl: "https://placeimg.com/640/320/any",
-            averageRating: 1,
-            uuIdentityName: "Bart Simpson",
-            sys: { cts: "2021-02-14T10:48:38.990Z" },
-          }}
-          onDelete={handleDelete}
-          onUpdate={handleUpdate}
-          style={{ width: 640, margin: "24px auto" }}
-        />
-      </div>
-    ); // : null;
+        <ListProvider>
+          {({ jokeList, remove, update }) => <ListView jokeList={jokeList} onDelete={remove} onUpdate={update} />}
+        </ListProvider>
+      </>
+    ); //:null;
     //@@viewOff:render
   },
 });
 
 //@@viewOn:exports
-export { MyList };
-export default MyList;
+export { NewList };
+export default NewList;
 //@@viewOff:exports
