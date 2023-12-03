@@ -1,4 +1,4 @@
-//show/return lists for specific user
+//create list for specific user
 "use strict";
 class CreateList {
   creatingList(ucEnv) {

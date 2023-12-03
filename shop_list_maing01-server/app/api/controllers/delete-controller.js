@@ -1,4 +1,4 @@
-//show/return lists for specific user
+//delete list for specific user
 "use strict";
 class DeleteList {
   delList(ucEnv) {

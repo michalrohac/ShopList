@@ -50,6 +50,16 @@
         "realization": "api/controllers/UpdateController.updateList",
         "httpMethod": ["PUT"],
         "type": "CMD"
+      },
+      "showShared": {
+        "realization": "api/controllers/SharedShowController.showShared",
+        "httpMethod": ["GET"],
+        "type": "CMD"
+      },
+      "viewShared": {
+        "realization": "api/controllers/SharedViewController.viewShared",
+        "httpMethod": ["GET"],
+        "type": "CMD"
       }
     }
   }

@@ -45,7 +45,11 @@
         "sysStateList": ["active"],
         "profileList": ["Public"]
       },
-      "viewList": {
+      "showShared": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
+      },
+      "viewShared": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
       }

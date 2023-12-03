@@ -1,4 +1,4 @@
-//show/return lists for specific user
+//update list for specific user
 "use strict";
 class UpdateList {
   updateList(ucEnv) {
