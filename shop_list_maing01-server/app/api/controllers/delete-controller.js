@@ -1,7 +1,7 @@
 //delete list for specific user
 "use strict";
 class DeleteList {
-  delList(ucEnv) {
+  deleteList(ucEnv) {
     const dtoOut = {
       text: "Deleting list!",
       uuAppErrorMap: {},

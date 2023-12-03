@@ -36,14 +36,14 @@
         "httpMethod": ["GET"],
         "type": "CMD"
       },
-      "creatingList": {
-        "realization": "api/controllers/CreateListController.creatingList",
+      "createList": {
+        "realization": "api/controllers/CreateListController.createList",
         "httpMethod": ["POST"],
         "type": "CMD"
       },
-      "delList": {
-        "realization": "api/controllers/DeleteController.delList",
-        "httpMethod": ["POST"],
+      "deleteList": {
+        "realization": "api/controllers/DeleteController.deleteList",
+        "httpMethod": ["DELETE"],
         "type": "CMD"
       },
       "updateList": {

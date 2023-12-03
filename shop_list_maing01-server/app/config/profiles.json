@@ -33,11 +33,11 @@
         "sysStateList": ["active"],
         "profileList": ["Public"]
       },
-      "creatingList": {
+      "createList": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
       },
-      "delList": {
+      "deleteList": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
       },
