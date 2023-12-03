@@ -29,15 +29,23 @@
         "sysStateList": ["active"],
         "profileList": ["Public"]
       },
-      "helloWorld": {
+      "showList": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
       },
-      "helloWorld": {
+      "creatingList": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
       },
-      "helloWorld": {
+      "delList": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
+      },
+      "updateList": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
+      },
+      "viewList": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
       }

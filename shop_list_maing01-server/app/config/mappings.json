@@ -30,6 +30,26 @@
         "realization": "api/controllers/GreetingController.helloWorld",
         "httpMethod": ["GET"],
         "type": "CMD"
+      },
+      "showList": {
+        "realization": "api/controllers/ShowListController.showList",
+        "httpMethod": ["GET"],
+        "type": "CMD"
+      },
+      "creatingList": {
+        "realization": "api/controllers/CreateListController.creatingList",
+        "httpMethod": ["POST"],
+        "type": "CMD"
+      },
+      "delList": {
+        "realization": "api/controllers/DeleteController.delList",
+        "httpMethod": ["POST"],
+        "type": "CMD"
+      },
+      "updateList": {
+        "realization": "api/controllers/UpdateController.updateList",
+        "httpMethod": ["PUT"],
+        "type": "CMD"
       }
     }
   }
