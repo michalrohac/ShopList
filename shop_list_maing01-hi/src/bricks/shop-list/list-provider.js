@@ -1,9 +1,9 @@
 //@@viewOn:imports
-import { createComponent, Utils } from "uu5g05";
+import { createComponent, Utils, useState } from "uu5g05";
 import Config from "./config/config";
 //@@viewOff:imports
 
-let jokeList = [
+const initialJokeList = [
   {
     id: Utils.String.generateId(),
     name: "Bunny ate the wedding ring!",
@@ -22,8 +22,8 @@ let jokeList = [
   },
   {
     id: Utils.String.generateId(),
-    name: "Random image",
-    imageUrl: "https://placeimg.com/640/320/any",
+    name: "Joke with image",
+    imageUrl: "https://picsum.photos/id/164/640/320",
     averageRating: 1,
     uuIdentityName: "Bart Simpson",
     sys: { cts: "2021-02-14T10:48:38.990Z" },
@@ -45,8 +45,25 @@ const ListProvider = createComponent({
 
   render(props) {
     //@@viewOn:private
+    const [jokeList, setJokeList] = useState(initialJokeList);
+
     function remove(joke) {
-      jokeList = jokeList.filter((item) => item.id !== joke.id);
+      setJokeList((prevJokeList) => prevJokeList.filter((item) => item.id !== joke.id));
+    }
+
+    function create(values) {
+      const joke = {
+        ...values,
+        id: Utils.String.generateId(),
+        averageRating: Math.round(Math.random() * 5), // <0, 5>
+        uuIdentityName: "Gerald of Rivia",
+        sys: {
+          cts: new Date().toISOString(),
+        },
+      };
+
+      setJokeList((prevJokeList) => [...prevJokeList, joke]);
+      return joke;
     }
 
     function update() {
@@ -55,7 +72,7 @@ const ListProvider = createComponent({
     //@@viewOff:private
 
     //@@viewOn:render
-    const value = { jokeList, remove, update };
+    const value = { jokeList, remove, update, create };
     return typeof props.children === "function" ? props.children(value) : props.children;
     //@@viewOff:render
   },

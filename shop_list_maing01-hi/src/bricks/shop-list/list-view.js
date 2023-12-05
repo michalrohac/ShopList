@@ -23,6 +23,7 @@ const ListView = createVisualComponent({
     jokeList: [],
     onUpdate: () => {},
     onDelete: () => {},
+    onShow: () => {},
   },
   //@@viewOff:defaultProps
 
@@ -62,6 +63,15 @@ const ListView = createVisualComponent({
         showError(error, "Joke update failed!");
       }
     }
+
+    function handleShow(event) {
+      try {
+        props.onShow(event.data);
+      } catch (error) {
+        ListView.logger.error("Error displaying joke", error);
+        showError(error, "Joke cannot be shown!");
+      }
+    }
     //@@viewOff:private
 
     //@@viewOn:render
@@ -75,6 +85,7 @@ const ListView = createVisualComponent({
             joke={joke}
             onDelete={handleDelete}
             onUpdate={handleUpdate}
+            onShow={handleShow}
             style={{ width: 640, margin: "24px auto" }}
           />
         ))}

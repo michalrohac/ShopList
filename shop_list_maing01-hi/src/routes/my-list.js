@@ -8,6 +8,8 @@ import importLsi from "../lsi/import-lsi.js";
 import Tile from "../bricks/shop-list/tile.js";
 import ListProvider from "../bricks/shop-list/list-provider";
 import ListView from "../bricks/shop-list/list-view";
+import { Box } from "uu5g05-elements";
+import CreateView from "../bricks/shop-list/create-view";
 //@@viewOff:imports
 
 //@@viewOn:constants
@@ -78,8 +80,15 @@ const NewList = createVisualComponent({
       <>
         <RouteBar />
         <ListProvider>
-          {({ jokeList, remove, update }) => <ListView jokeList={jokeList} onDelete={remove} onUpdate={update} />}
+          {({ jokeList, remove, update, show }) => (
+            <ListView jokeList={jokeList} onDelete={remove} onUpdate={update} onShow={show} />
+          )}
         </ListProvider>
+        <ListProvider>Helllo World.</ListProvider>
+        <ListProvider>
+          <Box>Helllo World.</Box>
+        </ListProvider>
+        <ListProvider>{() => "Helllo World."}</ListProvider>
       </>
     ); //:null;
     //@@viewOff:render

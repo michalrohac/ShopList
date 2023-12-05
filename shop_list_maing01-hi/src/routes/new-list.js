@@ -8,6 +8,7 @@ import importLsi from "../lsi/import-lsi.js";
 import Tile from "../bricks/shop-list/tile.js";
 import ListProvider from "../bricks/shop-list/list-provider";
 import ListView from "../bricks/shop-list/list-view";
+import CreateView from "../bricks/shop-list/create-view";
 //@@viewOff:imports
 
 //@@viewOn:constants
@@ -78,7 +79,11 @@ const NewList = createVisualComponent({
       <>
         <RouteBar />
         <ListProvider>
-          {({ jokeList, remove, update }) => <ListView jokeList={jokeList} onDelete={remove} onUpdate={update} />}
+          {({ jokeList, remove, update, show, create }) => (
+            <>
+              <CreateView onCreate={create} style={{ maxWidth: 400, margin: "24px auto", display: "block" }} />
+            </>
+          )}
         </ListProvider>
       </>
     ); //:null;

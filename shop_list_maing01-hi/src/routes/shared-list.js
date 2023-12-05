@@ -1,9 +1,16 @@
 //@@viewOn:imports
 import { createVisualComponent, Utils, Content } from "uu5g05";
+import { withRoute } from "uu_plus4u5g02-app";
 import Config from "./config/config.js";
 import WelcomeRow from "../bricks/welcome-row.js";
 import RouteBar from "../core/route-bar.js";
 import importLsi from "../lsi/import-lsi.js";
+import Tile from "../bricks/shop-list/tile.js";
+import ListProvider from "../bricks/shop-list/list-provider";
+import ListView from "../bricks/shop-list/list-view";
+import CreateView from "../bricks/shop-list/create-view";
+import ListTitle from "../bricks/shop-list/list-title.js";
+//@@viewOff:imports
 //@@viewOff:imports
 
 //@@viewOn:constants
@@ -48,8 +55,15 @@ const SharedList = createVisualComponent({
       //currentNestingLevel ? (
       <div {...attrs}>
         <RouteBar />
-        <div>List you share with others members and their lists shared with you.</div>
-        <WelcomeRow>TEST - shared lists</WelcomeRow>
+        <ListProvider>
+          {({ jokeList, remove, update, show, create }) => (
+            <>
+              <CreateView onCreate={create} style={{ maxWidth: 400, margin: "24px auto", display: "block" }} />
+              <ListView jokeList={jokeList} onDelete={remove} onUpdate={update} onShow={show} />
+              <ListTitle jokeList={jokeList} />
+            </>
+          )}
+        </ListProvider>
       </div>
     ); //:null;
   },

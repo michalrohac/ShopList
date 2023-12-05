@@ -43,6 +43,7 @@ const Tile = createVisualComponent({
   defaultProps: {
     onUpdate: () => {},
     onDelete: () => {},
+    onShow: () => {},
   },
   //@@viewOff:defaultProps
 
@@ -54,6 +55,10 @@ const Tile = createVisualComponent({
     }
 
     function handleUpdate(event) {
+      props.onUpdate(new Utils.Event(props.joke, event));
+    }
+
+    function handleShow(event) {
       props.onUpdate(new Utils.Event(props.joke, event));
     }
     //@@viewOff:private
@@ -95,7 +100,7 @@ const Tile = createVisualComponent({
           {`Average rating: ${props.joke.averageRating.toFixed(props.joke.averageRating % 1 ? 1 : 0)} / 5`}
           <Button
             icon="uubmlstencil-uuappdesignkit-bullet-list"
-            onClick={handleUpdate}
+            onClick={handleShow}
             significance="subdued"
             tooltip="Show list"
           />

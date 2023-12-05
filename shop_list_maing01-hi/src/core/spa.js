@@ -14,6 +14,7 @@ const NewList = Utils.Component.lazy(() => import("../routes/new-list.js"));
 const MyList = Utils.Component.lazy(() => import("../routes/my-list.js"));
 const SharedList = Utils.Component.lazy(() => import("../routes/shared-list.js"));
 const CompletedList = Utils.Component.lazy(() => import("../routes/completed-list.js"));
+const showList = Utils.Component.lazy(() => import("../routes/show-list.js"));
 
 //@@my routes end
 const About = Utils.Component.lazy(() => import("../routes/about.js"));
@@ -28,13 +29,10 @@ const ROUTE_MAP = {
   sharedList: (props) => <SharedList {...props} />,
   completedList: (props) => <CompletedList {...props} />,
   about: (props) => <About {...props} />,
+  showList: (props) => <showList {...props} />,
   "sys/uuAppWorkspace/initUve": (props) => <InitAppWorkspace {...props} />,
   controlPanel: (props) => <ControlPanel {...props} />,
-  "*": () => (
-    <Uu5Elements.Text category="story" segment="heading" type="h1">
-      Not Found
-    </Uu5Elements.Text>
-  ),
+  "*": { redirect: "home" },
 };
 //@@viewOff:constants
 
