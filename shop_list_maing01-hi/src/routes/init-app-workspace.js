@@ -11,6 +11,7 @@ import importLsi from "../lsi/import-lsi.js";
 
 //@@viewOn:constants
 const RELATIVE_URI_REGEXP = new RegExp(/^\/[^/]/);
+
 //@@viewOff:constants
 
 //@@viewOn:css

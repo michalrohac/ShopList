@@ -16,7 +16,7 @@ const Mode = {
 function CreateButton(props) {
   return (
     <Button {...props} colorScheme="primary" significance="highlighted">
-      Create joke
+      Create new list
     </Button>
   );
 }

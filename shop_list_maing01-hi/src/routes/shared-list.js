@@ -58,7 +58,6 @@ const SharedList = createVisualComponent({
         <ListProvider>
           {({ jokeList, remove, update, show, create }) => (
             <>
-              <CreateView onCreate={create} style={{ maxWidth: 400, margin: "24px auto", display: "block" }} />
               <ListView jokeList={jokeList} onDelete={remove} onUpdate={update} onShow={show} />
               <ListTitle jokeList={jokeList} />
             </>
