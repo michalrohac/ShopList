@@ -3,57 +3,81 @@ import { createComponent, Utils, useState } from "uu5g05";
 import Config from "./config/config";
 //@@viewOff:imports
 
-const initialShopList = [
+const users = [
   {
-    id: Utils.String.generateId(),
-    name: "Bunny ate the wedding ring!",
-    text: "Why did the bunny eat the wedding ring? Because he heard it was 18 carrots!",
-    averageRating: 4,
-    uuIdentityName: "John Smith",
-    sys: { cts: "2022-03-17T09:48:38.990Z" },
+    userID: 1,
+    name: "Michal",
   },
   {
-    id: Utils.String.generateId(),
-    name: "F5",
-    text: "I love the F5 key. It´s just so refreshing.",
-    averageRating: 3,
-    uuIdentityName: "Harry Potter",
-    sys: { cts: "2022-02-14T10:48:38.990Z" },
+    userID: 2,
+    name: "Michaela",
   },
   {
-    id: Utils.String.generateId(),
-    name: "Joke with image",
-    imageUrl: "https://picsum.photos/id/164/640/320",
-    averageRating: 1,
-    uuIdentityName: "Bart Simpson",
-    sys: { cts: "2021-02-14T10:48:38.990Z" },
+    userID: 3,
+    name: "Anna",
+  },
+  {
+    userID: 4,
+    name: "Koudy",
+  },
+  {
+    userID: 5,
+    name: "Franta",
   },
 ];
+//const mappedUsers = users.map();
 
-let shopList = [
+const initialShopList = [
   {
-    id: Utils.String.generateId(),
-    name: "Bunny ate the wedding ring!",
-    text: "Why did the bunny eat the wedding ring? Because he heard it was 18 carrots!",
-    averageRating: 4,
-    uuIdentityName: "John Smith",
-    sys: { cts: "2022-03-17T09:48:38.990Z" },
-  },
-  {
-    id: Utils.String.generateId(),
-    name: "F5",
-    text: "I love the F5 key. It´s just so refreshing.",
-    averageRating: 3,
-    uuIdentityName: "Harry Potter",
-    sys: { cts: "2022-02-14T10:48:38.990Z" },
-  },
-  {
-    id: Utils.String.generateId(),
-    name: "Joke with image",
-    imageUrl: "https://picsum.photos/id/164/640/320",
-    averageRating: 1,
-    uuIdentityName: "Bart Simpson",
-    sys: { cts: "2021-02-14T10:48:38.990Z" },
+    _id: "unique1",
+    awid: "22222222222222222222222222222222",
+    id: 10101010, //Utils.String.generateId(),
+    name: "Seznam 1",
+    text: "Nejaky popisek",
+    shared: [
+      {
+        userID: 2,
+      },
+      {
+        userID: 5,
+      },
+    ],
+    owner: {
+      userID: 1,
+    },
+    sys: { cts: "2023-10-11T09:48:38.990Z" },
+    ingredience: [
+      {
+        ingID: 1,
+        item: "Mrkev",
+        quantity: "1kg",
+        solved: false,
+      },
+      {
+        ingID: 2,
+        item: "Okurka",
+        quantity: "2 ks",
+        solved: true,
+      },
+      {
+        ingID: 3,
+        item: "Rum",
+        quantity: "0.7l",
+        solved: false,
+      },
+      {
+        ingID: 4,
+        item: "Pivo",
+        quantity: "20 ks",
+        solved: false,
+      },
+      {
+        ingID: 5,
+        item: "Rohlik",
+        quantity: "10 ks",
+        solved: false,
+      },
+    ],
   },
 ];
 

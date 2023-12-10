@@ -77,6 +77,7 @@ function InfoLine({ children }) {
     </Text>
   );
 }
+
 //@@viewOff:helpers
 
 const Tile = createVisualComponent({
@@ -88,13 +89,23 @@ const Tile = createVisualComponent({
   //@@viewOn:propTypes
   propTypes: {
     list: PropTypes.shape({
+      _id: PropTypes.string,
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      text: PropTypes.string,
-      imageUrl: PropTypes.string,
-      averageRating: PropTypes.number.isRequired,
-      uuIdentityName: PropTypes.string.isRequired,
+      shared: PropTypes.shape({
+        userID: PropTypes.number.isRequired,
+      }),
+      owner: PropTypes.shape({
+        userID: PropTypes.number.isRequired,
+      }),
       sys: PropTypes.shape({
         cts: PropTypes.string,
+      }),
+      ingredience: PropTypes.shape({
+        ingID: PropTypes.number.isRequired,
+        item: PropTypes.string.isRequired,
+        quantity: PropTypes.string.isRequired,
+        solved: Boolean,
       }),
     }).isRequired,
     onUpdate: PropTypes.func,
@@ -146,25 +157,18 @@ const Tile = createVisualComponent({
         <Text category="interface" segment="title" type="minor" colorScheme="building" className={Css.header()}>
           {props.list.name}
         </Text>
-
         <div className={Css.content(props.list.image)}>
-          {props.list.text && !props.list.image && (
-            <Text category="interface" segment="content" type="medium" colorScheme="building" className={Css.text()}>
-              {props.list.text}
-            </Text>
-          )}
-          {props.list.imageUrl && <img src={props.list.imageUrl} alt={props.list.name} className={Css.image()} />}
+          <Text category="interface" segment="content" type="medium" colorScheme="building" className={Css.text()}>
+            {props.list.text}
+          </Text>
         </div>
-        <Line significance="subdued" />
-        <InfoLine>
-          {props.list.uuIdentityName}, {props.list.id}
-        </InfoLine>
+
+        <InfoLine>Owner: {props.list.owner.userID}</InfoLine>
+        <InfoLine>Shared: {props.list.shared.userID}</InfoLine>
         <InfoLine>
           <DateTime value={props.list.sys.cts} dateFormat="short" timeFormat="none" />
         </InfoLine>
-
         <Box significance="distinct" className={Css.footer()}>
-          {`Average rating: ${props.list.averageRating.toFixed(props.list.averageRating % 1 ? 1 : 0)} / 5`}
           <Button
             icon="uubmlstencil-uuappdesignkit-bullet-list"
             onClick={handleShow}
