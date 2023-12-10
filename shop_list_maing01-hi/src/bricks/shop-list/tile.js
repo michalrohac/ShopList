@@ -87,7 +87,7 @@ const Tile = createVisualComponent({
 
   //@@viewOn:propTypes
   propTypes: {
-    joke: PropTypes.shape({
+    list: PropTypes.shape({
       name: PropTypes.string.isRequired,
       text: PropTypes.string,
       imageUrl: PropTypes.string,
@@ -99,6 +99,8 @@ const Tile = createVisualComponent({
     }).isRequired,
     onUpdate: PropTypes.func,
     onDelete: PropTypes.func,
+    onShow: PropTypes.func,
+    onCompleted: PropTypes.func,
   },
   //@@viewOff:propTypes
 
@@ -107,6 +109,7 @@ const Tile = createVisualComponent({
     onUpdate: () => {},
     onDelete: () => {},
     onShow: () => {},
+    onCompleted: () => {},
   },
   //@@viewOff:defaultProps
 
@@ -114,15 +117,18 @@ const Tile = createVisualComponent({
     //@@viewOn:private
     const { children } = props;
     function handleDelete(event) {
-      props.onDelete(new Utils.Event(props.joke, event));
+      props.onDelete(new Utils.Event(props.list, event));
     }
 
     function handleUpdate(event) {
-      props.onUpdate(new Utils.Event(props.joke, event));
+      props.onUpdate(new Utils.Event(props.list, event));
     }
 
     function handleShow(event) {
-      props.onShow(new Utils.Event(props.joke, event));
+      props.onShow(new Utils.Event(props.list, event));
+    }
+    function handleCompleted(event) {
+      props.onCompleted(new Utils.Event(props.list, event));
     }
     //@@viewOff:private
 
@@ -138,27 +144,27 @@ const Tile = createVisualComponent({
       //currentNestingLevel ? (
       <Box {...elementProps}>
         <Text category="interface" segment="title" type="minor" colorScheme="building" className={Css.header()}>
-          {props.joke.name}
+          {props.list.name}
         </Text>
 
-        <div className={Css.content(props.joke.image)}>
-          {props.joke.text && !props.joke.image && (
+        <div className={Css.content(props.list.image)}>
+          {props.list.text && !props.list.image && (
             <Text category="interface" segment="content" type="medium" colorScheme="building" className={Css.text()}>
-              {props.joke.text}
+              {props.list.text}
             </Text>
           )}
-          {props.joke.imageUrl && <img src={props.joke.imageUrl} alt={props.joke.name} className={Css.image()} />}
+          {props.list.imageUrl && <img src={props.list.imageUrl} alt={props.list.name} className={Css.image()} />}
         </div>
         <Line significance="subdued" />
         <InfoLine>
-          {props.joke.uuIdentityName}, {props.joke.id}
+          {props.list.uuIdentityName}, {props.list.id}
         </InfoLine>
         <InfoLine>
-          <DateTime value={props.joke.sys.cts} dateFormat="short" timeFormat="none" />
+          <DateTime value={props.list.sys.cts} dateFormat="short" timeFormat="none" />
         </InfoLine>
 
         <Box significance="distinct" className={Css.footer()}>
-          {`Average rating: ${props.joke.averageRating.toFixed(props.joke.averageRating % 1 ? 1 : 0)} / 5`}
+          {`Average rating: ${props.list.averageRating.toFixed(props.list.averageRating % 1 ? 1 : 0)} / 5`}
           <Button
             icon="uubmlstencil-uuappdesignkit-bullet-list"
             onClick={handleShow}
@@ -167,6 +173,7 @@ const Tile = createVisualComponent({
           />
           <Button icon="mdi-pencil" onClick={handleUpdate} significance="subdued" tooltip="Update" />
           <Button icon="mdi-delete" onClick={handleDelete} significance="subdued" tooltip="Delete" />
+          <Button icon="mdi-check" onClick={handleCompleted} significance="subdued" tooltip="Move to completed lists" />
         </Box>
       </Box>
     ); //: null;

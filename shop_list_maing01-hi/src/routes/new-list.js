@@ -53,7 +53,7 @@ const NewList = createVisualComponent({
       <>
         <RouteBar />
         <ListProvider>
-          {({ jokeList, remove, update, show, create }) => (
+          {({ shopList, remove, update, show, create }) => (
             <>
               <CreateView onCreate={create} style={{ maxWidth: 400, margin: "24px auto", display: "block" }} />
             </>

@@ -54,16 +54,13 @@ const NewList = createVisualComponent({
     return (
       <>
         <RouteBar />
+        <WelcomeRow>My shopping lists</WelcomeRow>
+        <div>My shopping lists</div>
         <ListProvider>
-          {({ jokeList, remove, update, show }) => (
-            <ListView jokeList={jokeList} onDelete={remove} onUpdate={update} onShow={show} />
+          {({ shopList, remove, update, show }) => (
+            <ListView shopList={shopList} onDelete={remove} onUpdate={update} onShow={show} />
           )}
         </ListProvider>
-        <ListProvider>Helllo World.</ListProvider>
-        <ListProvider>
-          <Box>Helllo World.</Box>
-        </ListProvider>
-        <ListProvider>{() => "Helllo World."}</ListProvider>
       </>
     ); //:null;
     //@@viewOff:render

@@ -10,13 +10,13 @@ const ListTitle = createComponent({
 
   //@@viewOn:propTypes
   propTypes: {
-    jokeList: PropTypes.array,
+    shopList: PropTypes.array,
   },
   //@@viewOff:propTypes
 
   //@@viewOn:defaultProps
   defaultProps: {
-    jokeList: [],
+    shopList: [],
   },
   //@@viewOff:defaultProps
 
@@ -26,10 +26,10 @@ const ListTitle = createComponent({
     /* Title */
     useEffect(() => {
       const originalTitle = document.title;
-      document.title = `${originalTitle} - ${props.jokeList.length} jokes`;
+      document.title = `${originalTitle} - ${props.shopList.length} lists`;
 
       return () => (document.title = originalTitle);
-    }, [props.jokeList.length]);
+    }, [props.shopList.length]);
     //@@viewOff:private
 
     //@@viewOn:render

@@ -12,18 +12,21 @@ const ListView = createVisualComponent({
 
   //@@viewOn:propTypes
   propTypes: {
-    jokeList: PropTypes.array.isRequired,
+    shopList: PropTypes.array.isRequired,
     onUpdate: PropTypes.func,
     onDelete: PropTypes.func,
+    onShow: PropTypes.func,
+    onCompleted: PropTypes.func,
   },
   //@@viewOff:propTypes
 
   //@@viewOn:defaultProps
   defaultProps: {
-    jokeList: [],
+    shopList: [],
     onUpdate: () => {},
     onDelete: () => {},
     onShow: () => {},
+    onCompleted: () => {},
   },
   //@@viewOff:defaultProps
 
@@ -40,18 +43,18 @@ const ListView = createVisualComponent({
     }
 
     function handleDelete(event) {
-      const joke = event.data;
+      const list = event.data;
 
       try {
-        props.onDelete(joke);
+        props.onDelete(list);
         addAlert({
-          message: `The joke ${joke.name} has been deleted.`,
+          message: `Shopping list - ${list.name} - has been deleted.`,
           priority: "success",
           durationMs: 2000,
         });
       } catch (error) {
-        ListView.logger.error("Error deleting joke", error);
-        showError(error, "Joke delete failed!");
+        ListView.logger.error("Error deleting shopping list", error);
+        showError(error, "Cannot delete selected shopping list!");
       }
     }
 
@@ -59,8 +62,8 @@ const ListView = createVisualComponent({
       try {
         props.onUpdate(event.data);
       } catch (error) {
-        ListView.logger.error("Error updating joke", error);
-        showError(error, "Joke update failed!");
+        ListView.logger.error("Error updating shopping list", error);
+        showError(error, "Shopping list update failed!");
       }
     }
 
@@ -68,8 +71,16 @@ const ListView = createVisualComponent({
       try {
         props.onShow(event.data);
       } catch (error) {
-        ListView.logger.error("Error displaying joke", error);
-        showError(error, "Joke cannot be shown!");
+        ListView.logger.error("Error displaying required shopping list", error);
+        showError(error, "Shopping list cannot be shown!");
+      }
+    }
+    function handleCompleted(event) {
+      try {
+        props.completed(event.data);
+      } catch (error) {
+        ListView.logger.error("Cannot complete the list", error);
+        showError(error, "Shopping list cannotbe completed!");
       }
     }
     //@@viewOff:private
@@ -79,13 +90,14 @@ const ListView = createVisualComponent({
 
     return (
       <div {...attrs}>
-        {props.jokeList.map((joke) => (
+        {props.shopList.map((list) => (
           <Tile
-            key={joke.id}
-            joke={joke}
+            key={list.id}
+            list={list}
             onDelete={handleDelete}
             onUpdate={handleUpdate}
             onShow={handleShow}
+            onCompleted={handleCompleted}
             style={{ width: 640, margin: "24px auto" }}
           />
         ))}

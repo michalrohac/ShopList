@@ -55,11 +55,13 @@ const SharedList = createVisualComponent({
       //currentNestingLevel ? (
       <div {...attrs}>
         <RouteBar />
+        <WelcomeRow>Shared shopping lists</WelcomeRow>
+        <div>Shopping list shared with other users and with you.</div>
         <ListProvider>
-          {({ jokeList, remove, update, show, create }) => (
+          {({ shopList, remove, update, show, create }) => (
             <>
-              <ListView jokeList={jokeList} onDelete={remove} onUpdate={update} onShow={show} />
-              <ListTitle jokeList={jokeList} />
+              <ListView shopList={shopList} onDelete={remove} onUpdate={update} onShow={show} />
+              <ListTitle shopList={shopList} />
             </>
           )}
         </ListProvider>

@@ -48,8 +48,8 @@ const CompletedList = createVisualComponent({
       //currentNestingLevel ? (
       <div {...attrs}>
         <RouteBar />
-        <div>List you share with others members and their lists shared with you.</div>
-        <WelcomeRow>TEST - completed lists</WelcomeRow>
+        <WelcomeRow>Completed shopping Lists</WelcomeRow>
+        <div>Your shopping lists marked as completed.</div>
       </div>
     ); //null;
     //@@viewOff:render

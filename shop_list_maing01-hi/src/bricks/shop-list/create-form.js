@@ -1,6 +1,6 @@
 //@@viewOn:imports
 import { createVisualComponent, PropTypes, Utils } from "uu5g05";
-import { Form, FormText, SubmitButton, CancelButton } from "uu5g05-forms";
+import { Form, FormText, SubmitButton, CancelButton, FormQuarter, FormSelect, FormSlider } from "uu5g05-forms";
 import Config from "./config/config.js";
 import { Dropdown } from "uu5g05-elements";
 //@@viewOff:imports
@@ -33,7 +33,7 @@ const CreateForm = createVisualComponent({
         <FormText name="text" label="Text" required />
         <FormText name="ing1" label="Ingredience" />
         <FormText name="value1" label="Value" />
-        <FormText name="ing2" label="Ingredience" />
+        <FormSlider name="ing2" label="Ingredience" />
         <FormText name="value2" label="Value" />
         <FormText name="ing3" label="Ingredience" />
         <FormText name="value3" label="Value" />
