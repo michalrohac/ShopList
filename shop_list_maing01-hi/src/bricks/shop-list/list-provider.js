@@ -33,13 +33,112 @@ const initialShopList = [
     awid: "22222222222222222222222222222222",
     id: 10101010, //Utils.String.generateId(),
     name: "Seznam 1",
-    text: "Nejaky popisek",
+    text: "Nejaky popisek 1111233",
     shared: [
       {
         userID: 2,
       },
       {
         userID: 5,
+      },
+    ],
+    owner: {
+      userID: 1,
+    },
+    sys: { cts: "2023-10-11T09:48:38.990Z" },
+    ingredience: [
+      {
+        ingID: 1,
+        item: "Mrkev",
+        quantity: "1kg",
+        solved: false,
+      },
+      {
+        ingID: 2,
+        item: "Okurka",
+        quantity: "2 ks",
+        solved: true,
+      },
+      {
+        ingID: 3,
+        item: "Rum",
+        quantity: "0.7l",
+        solved: false,
+      },
+      {
+        ingID: 4,
+        item: "Pivo",
+        quantity: "20 ks",
+        solved: false,
+      },
+      {
+        ingID: 5,
+        item: "Rohlik",
+        quantity: "10 ks",
+        solved: false,
+      },
+    ],
+  },
+  {
+    _id: "unique2",
+    awid: "22222222222222222222222222222222",
+    id: 10101011, //Utils.String.generateId(),
+    name: "Seznam 2",
+    text: "Nejaky popisek werty",
+    shared: [
+      {
+        userID: 2,
+      },
+      {
+        userID: 5,
+      },
+    ],
+    owner: {
+      userID: 1,
+    },
+    sys: { cts: "2023-10-11T09:48:38.990Z" },
+    ingredience: [
+      {
+        ingID: 1,
+        item: "Mrkev",
+        quantity: "1kg",
+        solved: false,
+      },
+      {
+        ingID: 2,
+        item: "Okurka",
+        quantity: "2 ks",
+        solved: true,
+      },
+      {
+        ingID: 3,
+        item: "Rum",
+        quantity: "0.7l",
+        solved: false,
+      },
+      {
+        ingID: 4,
+        item: "Pivo",
+        quantity: "20 ks",
+        solved: false,
+      },
+      {
+        ingID: 5,
+        item: "Rohlik",
+        quantity: "10 ks",
+        solved: false,
+      },
+    ],
+  },
+  {
+    _id: "unique3",
+    awid: "22222222222222222222222222222222",
+    id: 10101012, //Utils.String.generateId(),
+    name: "Seznam 3",
+    text: "Nejaky popisek xfcv",
+    shared: [
+      {
+        userID: 2,
       },
     ],
     owner: {
