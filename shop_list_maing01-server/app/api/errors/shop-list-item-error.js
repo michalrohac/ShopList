@@ -8,6 +8,18 @@ const ShopListItem = {
   
 };
 
+const Update = {
+  UC_CODE: `${SHOP_LIST_ITEM_ERROR_PREFIX}update/`,
+  
+};
+
+const Delete = {
+  UC_CODE: `${SHOP_LIST_ITEM_ERROR_PREFIX}delete/`,
+  
+};
+
 module.exports = {
+  Delete,
+  Update,
   ShopListItem
 };

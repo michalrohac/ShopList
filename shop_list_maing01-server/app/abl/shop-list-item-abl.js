@@ -16,6 +16,14 @@ class ShopListItemAbl {
     this.dao = DaoFactory.getDao("shopListItem");
   }
 
+  async delete(awid, dtoIn) {
+    
+  }
+
+  async update(awid, dtoIn) {
+    
+  }
+
   async shopListItem(awid, dtoIn) {
     
   }

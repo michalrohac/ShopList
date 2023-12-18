@@ -1,6 +1,6 @@
 {
   "{asid}": {
-    "profileList": ["AsidAuthorities", "AsidExecutives", "AsidLicenseOwner", "Public"],
+    "profileList": ["AsidAuthorities","AsidExecutives","AsidLicenseOwner","Public"],
     "useCaseMap": {
       "shopList/Create": {
         "sysStateList": ["active"],
@@ -9,11 +9,11 @@
     }
   },
   "*": {
-    "profileList": ["Authorities", "Executives", "AwidLicenseOwner", "Public", "Authenticated", "AwidInitiator"],
+    "profileList": ["Authorities","Executives","AwidLicenseOwner","Public","Authenticated","AwidInitiator"],
     "useCaseMap": {
       "sys/uuAppWorkspace/init": {
-        "sysStateList": ["created", "assigned"],
-        "profileList": ["AwidLicenseOwner", "AwidInitiator"]
+        "sysStateList": ["created","assigned"],
+        "profileList": ["AwidLicenseOwner","AwidInitiator"]
       },
       "sys/uuAppWorkspace/load": {
         "sysStateList": ["active"],
@@ -28,7 +28,7 @@
       },
       "sys/uuAppWorkspace/initUve": {
         "sysStateList": ["created"],
-        "profileList": ["Public", "AwidLicenseOwner"]
+        "profileList": ["Public","AwidLicenseOwner"]
       },
       "helloWorld": {
         "sysStateList": ["active"],
@@ -41,6 +41,38 @@
       "ShopListItem/add": {
         "sysStateList": ["active"],
         "profileList": []
+      },
+      "ShopListItem/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authenticated"]
+      },
+      "ShopListItem/delete": {
+        "sysStateList": ["active"],
+        "profileList": ["Authenticated"]
+      },
+      "ListMain/createList": {
+        "sysStateList": ["active"],
+        "profileList": ["Authenticated"]
+      },
+      "ListMain/showList": {
+        "sysStateList": ["active"],
+        "profileList": ["Authenticated"]
+      },
+      "ListMain/deleteList": {
+        "sysStateList": ["active"],
+        "profileList": ["Authenticated"]
+      },
+      "ListMain/updateList": {
+        "sysStateList": ["active"],
+        "profileList": ["Authenticated"]
+      },
+      "ListMain/showShared": {
+        "sysStateList": ["active"],
+        "profileList": ["Authenticated"]
+      },
+      "ListMain/viewShared": {
+        "sysStateList": ["active"],
+        "profileList": ["Authenticated"]
       }
     }
   }

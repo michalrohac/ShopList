@@ -21,6 +21,30 @@ class ListMainAbl {
     this.validator = Validator.load();
   }
 
+  async viewShared(awid, dtoIn) {
+    
+  }
+
+  async showShared(awid, dtoIn) {
+    
+  }
+
+  async updateList(awid, dtoIn) {
+    
+  }
+
+  async deleteList(awid, dtoIn) {
+    
+  }
+
+  async showList(awid, dtoIn) {
+    
+  }
+
+  async createList(awid, dtoIn) {
+    
+  }
+
   async init(uri, dtoIn, session) {
     const awid = uri.getAwid();
     // HDS 1

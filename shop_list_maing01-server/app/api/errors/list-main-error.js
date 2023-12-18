@@ -38,6 +38,42 @@ const Init = {
   },
 };
 
+const CreateList = {
+  UC_CODE: `${LIST_MAIN_ERROR_PREFIX}createList/`,
+  
+};
+
+const ShowList = {
+  UC_CODE: `${LIST_MAIN_ERROR_PREFIX}showList/`,
+  
+};
+
+const DeleteList = {
+  UC_CODE: `${LIST_MAIN_ERROR_PREFIX}deleteList/`,
+  
+};
+
+const UpdateList = {
+  UC_CODE: `${LIST_MAIN_ERROR_PREFIX}updateList/`,
+  
+};
+
+const ShowShared = {
+  UC_CODE: `${LIST_MAIN_ERROR_PREFIX}showShared/`,
+  
+};
+
+const ViewShared = {
+  UC_CODE: `${LIST_MAIN_ERROR_PREFIX}viewShared/`,
+  
+};
+
 module.exports = {
+  ViewShared,
+  ShowShared,
+  UpdateList,
+  DeleteList,
+  ShowList,
+  CreateList,
   Init,
 };

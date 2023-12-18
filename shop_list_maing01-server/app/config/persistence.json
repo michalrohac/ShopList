@@ -15,6 +15,9 @@
         },
         "shopListItem": {
           "realization": "dao/ShopListItemMongo"
+        },
+        "listMian": {
+          "realization": "dao/ListMianMongo"
         }
       }
     }

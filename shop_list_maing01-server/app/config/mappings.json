@@ -35,6 +35,46 @@
         "realization": "api/controllers/ShopListItemController.shopListItem",
         "httpMethod": "POST",
         "type": "CMD"
+      },
+      "ShopListItem/update": {
+        "realization": "api/controllers/ShopListItemController.update",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "ShopListItem/delete": {
+        "realization": "api/controllers/ShopListItemController.delete",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "ListMain/createList": {
+        "realization": "api/controllers/ListMainController.createList",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "ListMain/showList": {
+        "realization": "api/controllers/ListMainController.showList",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "ListMain/deleteList": {
+        "realization": "api/controllers/ListMainController.deleteList",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "ListMain/updateList": {
+        "realization": "api/controllers/ListMainController.updateList",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "ListMain/showShared": {
+        "realization": "api/controllers/ListMainController.showShared",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "ListMain/viewShared": {
+        "realization": "api/controllers/ListMainController.viewShared",
+        "httpMethod": "GET",
+        "type": "CMD"
       }
     }
   }
