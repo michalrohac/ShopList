@@ -1,7 +1,12 @@
 {
   "{asid}": {
     "profileList": ["AsidAuthorities", "AsidExecutives", "AsidLicenseOwner", "Public"],
-    "useCaseMap": {}
+    "useCaseMap": {
+      "shopList/Create": {
+        "sysStateList": ["active"],
+        "profileList": []
+      }
+    }
   },
   "*": {
     "profileList": ["Authorities", "Executives", "AwidLicenseOwner", "Public", "Authenticated", "AwidInitiator"],
@@ -29,29 +34,13 @@
         "sysStateList": ["active"],
         "profileList": ["Public"]
       },
-      "showList": {
+      "ShopListItem": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": []
       },
-      "createList": {
+      "ShopListItem/add": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
-      },
-      "deleteList": {
-        "sysStateList": ["active"],
-        "profileList": ["Public"]
-      },
-      "updateList": {
-        "sysStateList": ["active"],
-        "profileList": ["Public"]
-      },
-      "showShared": {
-        "sysStateList": ["active"],
-        "profileList": ["Public"]
-      },
-      "viewShared": {
-        "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": []
       }
     }
   }

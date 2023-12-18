@@ -26,39 +26,14 @@
         "httpMethod": "GET",
         "type": "UVE"
       },
-      "helloWorld": {
-        "realization": "api/controllers/GreetingController.helloWorld",
-        "httpMethod": ["GET"],
+      "ShopListItem": {
+        "realization": "api/controllers/ShopListItemController.shopListItem",
+        "httpMethod": "GET",
         "type": "CMD"
       },
-      "showList": {
-        "realization": "api/controllers/ShowListController.showList",
-        "httpMethod": ["GET"],
-        "type": "CMD"
-      },
-      "createList": {
-        "realization": "api/controllers/CreateListController.createList",
-        "httpMethod": ["POST"],
-        "type": "CMD"
-      },
-      "deleteList": {
-        "realization": "api/controllers/DeleteController.deleteList",
-        "httpMethod": ["DELETE"],
-        "type": "CMD"
-      },
-      "updateList": {
-        "realization": "api/controllers/UpdateController.updateList",
-        "httpMethod": ["PUT"],
-        "type": "CMD"
-      },
-      "showShared": {
-        "realization": "api/controllers/SharedShowController.showShared",
-        "httpMethod": ["GET"],
-        "type": "CMD"
-      },
-      "viewShared": {
-        "realization": "api/controllers/SharedViewController.viewShared",
-        "httpMethod": ["GET"],
+      "ShopListItem/add": {
+        "realization": "api/controllers/ShopListItemController.shopListItem",
+        "httpMethod": "POST",
         "type": "CMD"
       }
     }

@@ -6,6 +6,15 @@
       "schemaMap": {
         "listMain": {
           "realization": "dao/ListMainMongo"
+        },
+        "shopList": {
+          "realization": "dao/ShopListMongo"
+        },
+        "list": {
+          "realization": "dao/ListMongo"
+        },
+        "shopListItem": {
+          "realization": "dao/ShopListItemMongo"
         }
       }
     }

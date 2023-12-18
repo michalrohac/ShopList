@@ -13,6 +13,13 @@ class ListMainController {
   loadBasicData(ucEnv) {
     return ListMainAbl.loadBasicData(ucEnv.getUri(), ucEnv.getSession());
   }
+
+  create(ucEnv) {
+    return ListMainAbl.loadBasicData(ucEnv.getUri(), ucEnv.getSession());
+  }
+  read() {}
+  update() {}
+  delete() {}
 }
 
 module.exports = new ListMainController();

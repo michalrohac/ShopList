@@ -6,10 +6,21 @@ import Plus4U5App from "uu_plus4u5g02-app";
 
 import Config from "./config/config.js";
 import Home from "../routes/home.js";
+import NewList from "../routes/new-list.js";
+import MyList from "../routes/my-list.js";
+import SharedList from "../routes/shared-list.js";
+import CompletedList from "../routes/completed-list.js";
+import showList from "../routes/show-list.js";
+
+//@@my routes end
+import About from "../routes/about.js";
+import InitAppWorkspace from "../routes/init-app-workspace.js";
+import ControlPanel from "../routes/control-panel.js";
 //@@viewOff:imports
 
 //@@viewOn:constants
 //@@my routes
+/* misto lazyload naimportovat jako knihovnu...
 const NewList = Utils.Component.lazy(() => import("../routes/new-list.js"));
 const MyList = Utils.Component.lazy(() => import("../routes/my-list.js"));
 const SharedList = Utils.Component.lazy(() => import("../routes/shared-list.js"));
@@ -19,7 +30,7 @@ const showList = Utils.Component.lazy(() => import("../routes/show-list.js"));
 //@@my routes end
 const About = Utils.Component.lazy(() => import("../routes/about.js"));
 const InitAppWorkspace = Utils.Component.lazy(() => import("../routes/init-app-workspace.js"));
-const ControlPanel = Utils.Component.lazy(() => import("../routes/control-panel.js"));
+const ControlPanel = Utils.Component.lazy(() => import("../routes/control-panel.js"));*/
 
 const ROUTE_MAP = {
   "": { redirect: "home" },

@@ -90,7 +90,7 @@ const initialShopList = [
         userID: 2,
       },
       {
-        userID: 5,
+        userID: 3,
       },
     ],
     owner: {
