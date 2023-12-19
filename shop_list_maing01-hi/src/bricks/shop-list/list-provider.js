@@ -1,6 +1,7 @@
 //@@viewOn:imports
 import { createComponent, Utils, useState } from "uu5g05";
 import Config from "./config/config";
+import Calls from "calls";
 //@@viewOff:imports
 
 const users = [
@@ -195,26 +196,48 @@ const ListProvider = createComponent({
 
   render(props) {
     //@@viewOn:private
-    const [shopList, setShopList] = useState(initialShopList);
+    const ShopListData = useDataList({
+      handlerMap: {
+        load: handleLoad,
+        loadNext: handleLoadNext,
+        create: handleCreate,
+      },
+      itemHandlerMap: {
+        update: handleUpdate,
+        delete: handleDelete,
+        show: handleShow,
+      },
+      pageSize: 3,
+    });
 
-    function remove(shopList) {
-      setShopList((prevShopList) => prevShopList.filter((item) => item.id !== shopList.id));
+    function handleLoad(dtoIn) {
+      return Calls.Joke.list(dtoIn);
     }
 
-    function create(values) {
-      const newList = {
-        ...values,
-        id: Utils.String.generateId(),
-        averageRating: Math.round(Math.random() * 5), // <0, 5>
-        uuIdentityName: "Gerald of Rivia",
-        sys: {
-          cts: new Date().toISOString(),
-        },
-      };
-
-      setShopList((prevShopList) => [...prevShopList, newList]);
-      return newList;
+    function handleLoadNext(dtoIn) {
+      return Calls.Joke.list(dtoIn);
     }
+
+    function handleCreate(values) {
+      return Calls.Joke.create(values);
+    }
+
+    async function handleUpdate() {
+      throw new Error("Joke update is not implemented yet.");
+    }
+
+    function show() {
+      throw new Error("Showing shopping list is not implemented yet.");
+    }
+
+    function handleDelete(joke) {
+      const dtoIn = { id: joke.id };
+      return Calls.Joke.delete(dtoIn, props.baseUri);
+    }
+    //@@viewOn:render
+    return typeof props.children === "function" ? props.children(jokeDataList) : props.children;
+    //@@viewOff:render      setShopList((prevShopList) => [...prevShopList, newList]);
+    return newList;
 
     function update() {
       throw new Error("Shopping list update is not implemented yet.");

@@ -42,6 +42,31 @@ const Calls = {
   getCommandUri(useCase, baseUri = Environment.appBaseUri) {
     return (!baseUri.endsWith("/") ? baseUri + "/" : baseUri) + (useCase.startsWith("/") ? useCase.slice(1) : useCase);
   },
-};
 
+  Seznam: {
+    list(dtoIn) {
+      const commandUri = Calls.getCommandUri("joke/list");
+      return Calls.call("get", commandUri, dtoIn);
+    },
+
+    create(dtoIn) {
+      const commandUri = Calls.getCommandUri("joke/create");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+
+    update(dtoIn) {
+      const commandUri = Calls.getCommandUri("joke/update");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+
+    delete(dtoIn) {
+      const commandUri = Calls.getCommandUri("joke/delete");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+
+    show(dtoIn) {
+      const commandUri = Calls.getCommandUri("joke/Show");
+    },
+  },
+};
 export default Calls;

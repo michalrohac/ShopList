@@ -2,7 +2,7 @@
 import { createVisualComponent, PropTypes, Utils } from "uu5g05";
 import { Form, FormText, SubmitButton, CancelButton, FormQuarter, FormSelect, FormSlider } from "uu5g05-forms";
 import Config from "./config/config.js";
-import { Dropdown } from "uu5g05-elements";
+import { Button, ButtonGroup, Dropdown } from "uu5g05-elements";
 //@@viewOff:imports
 
 const CreateForm = createVisualComponent({
@@ -14,6 +14,7 @@ const CreateForm = createVisualComponent({
   propTypes: {
     onSubmit: PropTypes.func,
     onCancel: PropTypes.func,
+    onAddRow: PropTypes.func,
   },
   //@@viewOff:propTypes
 
@@ -21,6 +22,7 @@ const CreateForm = createVisualComponent({
   defaultProps: {
     onSubmit: () => {},
     onCancel: () => {},
+    onAddRow: () => {},
   },
   //@@viewOff:defaultProps
 
@@ -29,19 +31,11 @@ const CreateForm = createVisualComponent({
     const { elementProps } = Utils.VisualComponent.splitProps(props);
     return (
       <Form {...elementProps} onSubmit={props.onSubmit}>
-        <FormText name="name" label="Name" required />
-        <FormText name="text" label="Text" required />
+        <FormText name="name" label="Shopping list name" required />
+        <FormText name="text" label="Shopping dist description" required />
         <FormText name="ing1" label="Ingredience" />
-        <FormText name="value1" label="Value" />
-        <FormSlider name="ing2" label="Ingredience" />
-        <FormText name="value2" label="Value" />
-        <FormText name="ing3" label="Ingredience" />
-        <FormText name="value3" label="Value" />
-        <FormText name="ing4" label="Ingredience" />
-        <FormText name="value4" label="Value" />
-        <FormText name="ing5" label="Ingredience" />
-        <FormText name="value5" label="Value" />
-
+        <FormText name="quiantity" type="number" label="Quantity" />
+        <Button onClick={props.AddRow}>+</Button>
         <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", paddingTop: 8 }}>
           <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
           <SubmitButton>Create new list</SubmitButton>
