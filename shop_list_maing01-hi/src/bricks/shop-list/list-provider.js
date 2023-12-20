@@ -1,5 +1,5 @@
 //@@viewOn:imports
-import { createComponent, Utils, useState } from "uu5g05";
+import { createComponent, useDataList, useEffect, useRef } from "uu5g05";
 import Config from "./config/config";
 import Calls from "calls";
 //@@viewOff:imports
@@ -206,38 +206,42 @@ const ListProvider = createComponent({
         update: handleUpdate,
         delete: handleDelete,
         show: handleShow,
+        completed: handleCompleted,
       },
       pageSize: 3,
     });
 
     function handleLoad(dtoIn) {
-      return Calls.Joke.list(dtoIn);
+      return Calls.Seznam.list(dtoIn);
     }
 
     function handleLoadNext(dtoIn) {
-      return Calls.Joke.list(dtoIn);
+      return Calls.Seznam.list(dtoIn);
     }
 
     function handleCreate(values) {
-      return Calls.Joke.create(values);
+      return Calls.Seznam.create(values);
     }
 
     async function handleUpdate() {
-      throw new Error("Joke update is not implemented yet.");
+      throw new Error("Shopping list update is not implemented yet.");
     }
 
-    function show() {
+    function handleShow() {
       throw new Error("Showing shopping list is not implemented yet.");
     }
+    function handleCompleted(){
+      throw new Error("Complete function is not implemented yet.")
+    }
 
-    function handleDelete(joke) {
-      const dtoIn = { id: joke.id };
-      return Calls.Joke.delete(dtoIn, props.baseUri);
+    function handleDelete(shopList) {
+      const dtoIn = { id: shopList.id };
+      return Calls.Seznam.delete(dtoIn, props.baseUri);
     }
     //@@viewOn:render
-    return typeof props.children === "function" ? props.children(jokeDataList) : props.children;
-    //@@viewOff:render      setShopList((prevShopList) => [...prevShopList, newList]);
-    return newList;
+    return typeof props.children === "function" ? props.children(ShopListData) : props.children;
+    //@@viewOff:render   
+    /*setShopList((prevShopList) => [...prevShopList, newList]); return newList;
 
     function update() {
       throw new Error("Shopping list update is not implemented yet.");
@@ -253,7 +257,7 @@ const ListProvider = createComponent({
 
     //@@viewOn:render
     const value = { shopList, remove, update, create, show, completed };
-    return typeof props.children === "function" ? props.children(value) : props.children;
+    return typeof props.children === "function" ? props.children(value) : props.children;*/
     //@@viewOff:render
   },
 });

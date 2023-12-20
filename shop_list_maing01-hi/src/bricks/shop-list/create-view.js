@@ -44,14 +44,22 @@ const CreateView = createVisualComponent({
     const { addAlert } = useAlertBus();
     const [mode, setMode] = useState(Mode.BUTTON);
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
       let list;
 
       try {
-        list = props.onCreate(event.data.value);
+        list = await props.ShopListDataList.handlerMap.create(event.data.value); 
+        //list = props.onCreate(event.data.value);
       } catch (error) {
+        CreateView.logger.error("Error while creating shopping list!", error);
+        addAlert({
+          header: "Creation of new shopping list failed!",
+          message: error.message,
+          priority: "error",
+        });
+        return;
         // We pass Error.Message instance to the Uu5Forms.Form that shows alert
-        throw new Utils.Error.Message("Shopping list creation failed!", error);
+        //throw new Utils.Error.Message("Shopping list creation failed!", error);
       }
 
       addAlert({
@@ -61,6 +69,7 @@ const CreateView = createVisualComponent({
       });
 
       setMode(Mode.BUTTON);
+      props.ShopListDataList.handlerMap.load();
     }
     //@@viewOff:private
 
@@ -73,6 +82,7 @@ const CreateView = createVisualComponent({
       default:
         return <CreateForm {...elementProps} onSubmit={handleSubmit} onCancel={() => setMode(Mode.BUTTON)} />;
     }
+    return <div {...attrs}>{content}</div>;
     //@@viewOff:render
   },
 });

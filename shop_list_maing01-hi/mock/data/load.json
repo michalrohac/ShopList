@@ -1,0 +1,308 @@
+[
+    {
+      "_id": "unique1",
+      "awid": "22222222222222222222222222222222",
+      "id": 10101010,
+      "name": "Seznam 1",
+      "text": "Nejaky popisek 1111233",
+      "shared": [
+        {
+          "userID": 2
+        },
+        {
+            "userID": 5
+        }
+      ],
+      "owner": {
+        "userID": 1
+      },
+      "sys": { "cts": "2023-10-23T09:48:38.990Z" },
+      "ingredience": [
+        {
+            "ingID": 1,
+            "item": "Mrkev",
+            "quantity": "1kg",
+            "solved": false
+        },
+        {
+            "ingID": 2,
+            "item": "Okurka",
+            "quantity": "2 ks",
+            "solved": true
+        },
+        {
+            "ingID": 3,
+            "item": "Rum",
+            "quantity": "0.7l",
+            "solved": false
+        },
+        {
+            "ingID": 4,
+            "item": "Pivo",
+            "quantity": "20 ks",
+            "solved": false
+        },
+        {
+            "ingID": 5,
+            "item": "Rohlik",
+            "quantity": "10 ks",
+            "solved": false
+        }
+      ]
+    },
+    {
+        "_id": "unique2",
+        "awid": "22222222222222222222222222222222",
+        "id": 10101011,
+        "name": "Seznam 2",
+        "text": "Nejaky popisek 225588",
+        "shared": [
+          {
+            "userID": 2
+          },
+          {
+              "userID": 5
+          }
+        ],
+        "owner": {
+          "userID": 1
+        },
+        "sys": { "cts": "2023-12-21T09:48:38.990Z" },
+        "ingredience": [
+          {
+              "ingID": 1,
+              "item": "Mrkev",
+              "quantity": "1kg",
+              "solved": false
+          },
+          {
+              "ingID": 2,
+              "item": "Okurka",
+              "quantity": "2 ks",
+              "solved": true
+          },
+          {
+              "ingID": 3,
+              "item": "Rum",
+              "quantity": "0.7l",
+              "solved": false
+          },
+          {
+              "ingID": 4,
+              "item": "Pivo",
+              "quantity": "20 ks",
+              "solved": false
+          },
+          {
+              "ingID": 5,
+              "item": "Rohlik",
+              "quantity": "10 ks",
+              "solved": false
+          }
+        ]
+      },
+      {
+        "_id": "unique3",
+        "awid": "22222222222222222222222222222222",
+        "id": 10101012,
+        "name": "Seznam 3",
+        "text": "Nejaky popisek 335577",
+        "shared": [
+          {
+            "userID": 2
+          },
+          {
+              "userID": 5
+          }
+        ],
+        "owner": {
+          "userID": 1
+        },
+        "sys": { "cts": "2023-10-21T09:48:38.990Z" },
+        "ingredience": [
+          {
+              "ingID": 1,
+              "item": "Mrkev",
+              "quantity": "1kg",
+              "solved": false
+          },
+          {
+              "ingID": 2,
+              "item": "Okurka",
+              "quantity": "2 ks",
+              "solved": true
+          },
+          {
+              "ingID": 3,
+              "item": "Rum",
+              "quantity": "0.7l",
+              "solved": false
+          },
+          {
+              "ingID": 4,
+              "item": "Pivo",
+              "quantity": "20 ks",
+              "solved": false
+          },
+          {
+              "ingID": 5,
+              "item": "Rohlik",
+              "quantity": "10 ks",
+              "solved": false
+          }
+        ]
+      },
+      {
+        "_id": "unique4",
+        "awid": "22222222222222222222222222222222",
+        "id": 10101013,
+        "name": "Seznam 4",
+        "text": "Nejaky popisek 445563",
+        "shared": [
+          {
+            "userID": 2
+          },
+          {
+              "userID": 5
+          }
+        ],
+        "owner": {
+          "userID": 1
+        },
+        "sys": { "cts": "2023-09-11T09:48:38.990Z" },
+        "ingredience": [
+          {
+              "ingID": 1,
+              "item": "Mrkev",
+              "quantity": "1kg",
+              "solved": false
+          },
+          {
+              "ingID": 2,
+              "item": "Okurka",
+              "quantity": "2 ks",
+              "solved": true
+          },
+          {
+              "ingID": 3,
+              "item": "Rum",
+              "quantity": "0.7l",
+              "solved": false
+          },
+          {
+              "ingID": 4,
+              "item": "Pivo",
+              "quantity": "20 ks",
+              "solved": false
+          },
+          {
+              "ingID": 5,
+              "item": "Rohlik",
+              "quantity": "10 ks",
+              "solved": false
+          }
+        ]
+      },
+      {
+        "_id": "unique5",
+        "awid": "22222222222222222222222222222222",
+        "id": 10101014,
+        "name": "Seznam 5",
+        "text": "Nejaky popisek 5588992",
+        "shared": [
+          {
+            "userID": 2
+          },
+          {
+              "userID": 5
+          }
+        ],
+        "owner": {
+          "userID": 1
+        },
+        "sys": { "cts": "2023-12-11T09:48:38.990Z" },
+        "ingredience": [
+          {
+              "ingID": 1,
+              "item": "Mrkev",
+              "quantity": "1kg",
+              "solved": false
+          },
+          {
+              "ingID": 2,
+              "item": "Okurka",
+              "quantity": "2 ks",
+              "solved": true
+          },
+          {
+              "ingID": 3,
+              "item": "Rum",
+              "quantity": "0.7l",
+              "solved": false
+          },
+          {
+              "ingID": 4,
+              "item": "Pivo",
+              "quantity": "20 ks",
+              "solved": false
+          },
+          {
+              "ingID": 5,
+              "item": "Rohlik",
+              "quantity": "10 ks",
+              "solved": false
+          }
+        ]
+      },
+      {
+        "_id": "unique6",
+        "awid": "22222222222222222222222222222222",
+        "id": 10101015,
+        "name": "Seznam 6",
+        "text": "Nejaky popisek 6655112",
+        "shared": [
+          {
+            "userID": 2
+          },
+          {
+              "userID": 5
+          }
+        ],
+        "owner": {
+          "userID": 1
+        },
+        "sys": { "cts": "2023-11-11T09:48:38.990Z" },
+        "ingredience": [
+          {
+              "ingID": 1,
+              "item": "Mrkev",
+              "quantity": "1kg",
+              "solved": false
+          },
+          {
+              "ingID": 2,
+              "item": "Okurka",
+              "quantity": "2 ks",
+              "solved": true
+          },
+          {
+              "ingID": 3,
+              "item": "Rum",
+              "quantity": "0.7l",
+              "solved": false
+          },
+          {
+              "ingID": 4,
+              "item": "Pivo",
+              "quantity": "20 ks",
+              "solved": false
+          },
+          {
+              "ingID": 5,
+              "item": "Rohlik",
+              "quantity": "10 ks",
+              "solved": false
+          }
+        ]
+        }
+    ]

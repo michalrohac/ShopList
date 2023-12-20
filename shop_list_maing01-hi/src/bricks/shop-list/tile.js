@@ -1,6 +1,6 @@
 //@@viewOn:imports
-import { createVisualComponent, Utils, Content, PropTypes } from "uu5g05";
-import { Box, Text, Line, Button, DateTime } from "uu5g05-elements";
+import { createVisualComponent, PropTypes, Utils, useEffect } from "uu5g05";
+import { Box, Text, Line, Button, DateTime, Pending } from "uu5g05-elements";
 import Config from "./config/config.js";
 //@@viewOff:imports
 
@@ -87,7 +87,7 @@ const Tile = createVisualComponent({
   //@@viewOff:statics
 
   //@@viewOn:propTypes
-  propTypes: {
+  /*propTypes: {
     list: PropTypes.shape({
       _id: PropTypes.string,
       id: PropTypes.string.isRequired,
@@ -112,6 +112,13 @@ const Tile = createVisualComponent({
     onDelete: PropTypes.func,
     onShow: PropTypes.func,
     onCompleted: PropTypes.func,
+  }*/
+  propTypes: {
+    ShopListDataObject: PropTypes.object.isRequired,
+    onUpdate: PropTypes.func,
+    onDelete: PropTypes.func,
+    onShow: PropTypes.func,
+    onCompleted: PropTypes.func,
   },
   //@@viewOff:propTypes
 
@@ -128,18 +135,18 @@ const Tile = createVisualComponent({
     //@@viewOn:private
     const { children } = props;
     function handleDelete(event) {
-      props.onDelete(new Utils.Event(props.list, event));
+      props.onDelete(props.ShopListDataObject/*new Utils.Event(props.list, event)*/);
     }
 
     function handleUpdate(event) {
-      props.onUpdate(new Utils.Event(props.list, event));
+      props.onUpdate(props.ShopListDataObject/*new Utils.Event(props.list, event)*/);
     }
 
     function handleShow(event) {
-      props.onShow(new Utils.Event(props.list, event));
+      props.onShow(props.ShopListDataObject/*new Utils.Event(props.list, event)*/);
     }
     function handleCompleted(event) {
-      props.onCompleted(new Utils.Event(props.list, event));
+      props.onCompleted(props.ShopListDataObject/*new Utils.Event(props.list, event)*/);
     }
     //@@viewOff:private
 
@@ -147,26 +154,28 @@ const Tile = createVisualComponent({
     //@@viewOff:interface
 
     //@@viewOn:render
-    const attrs = Utils.VisualComponent.getAttrs(props, Css.main());
-    const { elementProps } = Utils.VisualComponent.splitProps(props);
+    //const attrs = Utils.VisualComponent.getAttrs(props, Css.main());
+    const { elementProps } = Utils.VisualComponent.splitProps(props, Css.main());
+    const list = props.jokeDataObject.data;
+    const isActionDisabled = props.jokeDataObject.state === "pending";
     //const currentNestingLevel = Utils.NestingLevel.getNestingLevel(props, Tile);
 
     return (
       //currentNestingLevel ? (
       <Box {...elementProps}>
         <Text category="interface" segment="title" type="minor" colorScheme="building" className={Css.header()}>
-          {props.list.name}
+          {/*props.*/list.name}
         </Text>
-        <div className={Css.content(props.list.image)}>
+        <div className={Css.content(/*props.*/list.image)}>
           <Text category="interface" segment="content" type="medium" colorScheme="building" className={Css.text()}>
-            {props.list.text}
+            {/*props.*/list.text}
           </Text>
         </div>
 
-        <InfoLine>Owner: {props.list.owner.userID}</InfoLine>
-        <InfoLine>Shared: {props.list.shared.userID}</InfoLine>
+        <InfoLine>Owner: {/*props.*/list.owner.userID}</InfoLine>
+        <InfoLine>Shared: {/*props.*/list.shared.userID}</InfoLine>
         <InfoLine>
-          <DateTime value={props.list.sys.cts} dateFormat="short" timeFormat="none" />
+          <DateTime value={/*props.*/list.sys.cts} dateFormat="short" timeFormat="none" />
         </InfoLine>
         <Box significance="distinct" className={Css.footer()}>
           <Button
@@ -174,10 +183,11 @@ const Tile = createVisualComponent({
             onClick={handleShow}
             significance="subdued"
             tooltip="Show list"
+            disabled={isActionDisabled}
           />
-          <Button icon="mdi-pencil" onClick={handleUpdate} significance="subdued" tooltip="Update" />
-          <Button icon="mdi-delete" onClick={handleDelete} significance="subdued" tooltip="Delete" />
-          <Button icon="mdi-check" onClick={handleCompleted} significance="subdued" tooltip="Move to completed lists" />
+          <Button icon="mdi-pencil" onClick={handleUpdate} significance="subdued" tooltip="Update" disabled={isActionDisabled}/>
+          <Button icon="mdi-delete" onClick={handleDelete} significance="subdued" tooltip="Delete" disabled={isActionDisabled}/>
+          <Button icon="mdi-check" onClick={handleCompleted} significance="subdued" tooltip="Move to completed lists" disabled={isActionDisabled}/>
         </Box>
       </Box>
     ); //: null;

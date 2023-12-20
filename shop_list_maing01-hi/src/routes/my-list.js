@@ -1,12 +1,13 @@
 //@@viewOn:imports
 import { createVisualComponent, Utils, Content } from "uu5g05";
-import { withRoute } from "uu_plus4u5g02-app";
+import { withRoute, RouteController } from "uu_plus4u5g02-app";
 import Config from "./config/config.js";
 import WelcomeRow from "../bricks/welcome-row.js";
 import RouteBar from "../core/route-bar.js";
 import importLsi from "../lsi/import-lsi.js";
 import Tile from "../bricks/shop-list/tile.js";
 import ListProvider from "../bricks/shop-list/list-provider";
+import ListTitle from "../bricks/shop-list/list-title"
 import ListView from "../bricks/shop-list/list-view";
 import { Box } from "uu5g05-elements";
 import CreateView from "../bricks/shop-list/create-view";
@@ -57,12 +58,19 @@ const NewList = createVisualComponent({
         <WelcomeRow>My shopping lists</WelcomeRow>
         <div>My shopping lists</div>
         <ListProvider>
-          {({ shopList, remove, update, show }) => (
-            <ListView shopList={shopList} onDelete={remove} onUpdate={update} onShow={show} />
-          )}
+          {(ShopListData) => (
+            <RouteController routeDataObject={ShopListData}>
+              <div>
+                <CreateView ShopListData={ShopListData}/>
+                <ListView ShopListData={ShopListData} />
+                <ListTitle shopList={ShopListData.data}/>
+              </div>
+            </RouteController>
+            )
+          }
         </ListProvider>
       </>
-    ); //:null;
+    ); //:null; {({ shopList, remove, update, show }) => (<ListView shopList={shopList} onDelete={remove} onUpdate={update} onShow={show} />)}
     //@@viewOff:render
   },
 });
