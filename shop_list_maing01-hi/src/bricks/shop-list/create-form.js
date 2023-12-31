@@ -1,8 +1,9 @@
 //@@viewOn:imports
-import { createVisualComponent, PropTypes, Utils } from "uu5g05";
+import { createVisualComponent, PropTypes, Utils, Lsi } from "uu5g05";
 import { Form, FormText, SubmitButton, CancelButton, FormQuarter, FormSelect, FormSlider } from "uu5g05-forms";
 import Config from "./config/config.js";
 import { Button, ButtonGroup, Dropdown } from "uu5g05-elements";
+import importLsi from "../../lsi/import-lsi.js";
 //@@viewOff:imports
 
 const CreateForm = createVisualComponent({
@@ -31,14 +32,16 @@ const CreateForm = createVisualComponent({
     const { elementProps } = Utils.VisualComponent.splitProps(props);
     return (
       <Form {...elementProps} onSubmit={props.onSubmit}>
-        <FormText name="name" label="Shopping list name" required />
-        <FormText name="text" label="Shopping dist description" required />
-        <FormText name="ing1" label="Ingredience" />
-        <FormText name="quiantity" type="number" label="Quantity" />
+        <FormText name="name" label={<Lsi import={importLsi} path={["createForm", "shopListName"]} />} required />
+        <FormText name="text" label={<Lsi import={importLsi} path={["createForm", "shopListDesc"]} />} required />
+        <FormText name="ing1" label={<Lsi import={importLsi} path={["createForm", "ing"]} />} />
+        <FormText name="quiantity" type="number" label={<Lsi import={importLsi} path={["createForm", "quantity"]} />} />
         <Button onClick={props.AddRow}>+</Button>
         <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", paddingTop: 8 }}>
-          <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
-          <SubmitButton>Create new list</SubmitButton>
+          <CancelButton onClick={props.onCancel}>
+            {<Lsi import={importLsi} path={["createForm", "cancelButt"]} />}
+          </CancelButton>
+          <SubmitButton>{<Lsi import={importLsi} path={["createForm", "createButton"]} />}</SubmitButton>
         </div>
       </Form>
     );

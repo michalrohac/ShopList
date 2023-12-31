@@ -40,5 +40,42 @@
     "myLists": "Moje nakupni seznamy",
     "archived": "Archivovane nakupni seznamy",
     "sharedLists": "Sdilene nakupni seznamy"
+  },
+  "createForm": {
+    "createButton": "Novy nakupni seznam",
+    "cancelButt": "Cancel",
+    "shopListName": "Nazev nakupniho seznamu",
+    "shopListDesc": "Popis nakupniho seznamu",
+    "ing": "Surovina",
+    "quantity": "Mnozstvi"
+  },
+  "completedLists": {
+    "compListsName": "Archivovane nakupni seznamy",
+    "compListsDesc": "Vase archivovane nakupni seznamy."
+  },
+  "myLists": {
+    "myListsTitle": "Moje nakupni seznamy",
+    "myListsDesc": "My shopping lists",
+    "myListsUpdNotImpl": "Shopping list update is not implemented yet.",
+    "myListsShowListNotImpl": "Showing shopping list is not implemented yet.",
+    "myListsComplNotImpl": "Complete function is not implemented yet.",
+    "myListsErrDelete": "Error deleting shopping list",
+    "myListsCantDelete": "Cannot delete selected shopping list!",
+    "myListsShopListDeleted": "Shopping list: ${ShopListData.data.name} has been deleted.",
+    "myListsErrorUpd": "Error updating shopping list",
+    "myListsUpdateFailed": "Shopping list update failed!",
+    "myListsErrloadNextPage": "Error loading next page",
+    "myListsPageLoadFail": "Page loading failed!",
+    "myListsErrorDispl": "Error displaying required shopping list",
+    "myListsCantbeShown": "Shopping list cannot be shown!",
+    "myListsCantCompl1": "Cannot complete the list",
+    "myListsCantCompl2": "Shopping list cannot be completed!",
+    "myListsOwner": "Owner:",
+    "myListsMembers": "Shared:"
+  },
+  "tooltips": {
+    "tooltipUpdate": "Aktualizovat",
+    "tooltipDelete": "Smazat",
+    "tooltipComplete": "Presunout do archivovanych"
   }
 }

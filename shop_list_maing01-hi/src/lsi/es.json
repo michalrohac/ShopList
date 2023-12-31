@@ -1,0 +1,81 @@
+{
+  "appName": "Lista de compras de aplicaciones",
+  "About": {
+    "header": "Acerca de la aplicación Lista de compras",
+    "creatorsHeader": "Creadores de aplicaciones",
+    "termsOfUse": "Términos de uso"
+  },
+  "AboutContent": {
+    "content": "<uu5string/>",
+    "technologiesContent": "<uu5string/>Otras tecnologías utilizadas: <Uu5Elements.Link href='http://www.w3schools.com/html/default.asp' target='_blank'>Html5</Uu5Elements.Link>, <Uu5Elements.Link href='http://www.w3schools.com/css/default.asp' target='_blank'>CSS</Uu5Elements.Link>, <Uu5Elements.Link href='http://www.w3schools.com/js/default.asp' target='_blank'>JavaScript</Uu5Elements.Link>, <Uu5Elements.Link href='http://getbootstrap.com' target='_blank'>Bootstrap</Uu5Elements. Enlace>, <Uu5Elements.Link href='https://reactjs.org' target='_blank'>React</Uu5Elements.Link>, <Uu5Elements.Link href='https://www.ruby-lang.org' target='_blank'>Ruby</Uu5Elements.Link>, <Uu5Elements.Link href='http://puma.io' target='_blank'>Puma</Uu5Elements.Link> a <Uu5Elements.Link href= 'https://www.docker.com' target='_blank'>Docker</Uu5Elements.Link>. La aplicación se opera en <Uu5Elements.Link href='https://plus4u.net' target='_blank' >Plus4U</Uu5Elements.Link> servicio de Internet con el uso de la nube <Uu5Elements.Link href='https://azure.microsoft.com' target='_blank'>Microsoft Azure</Uu5Elements.Link>."
+  },
+  "ControlPanel": {
+    "rightsError": "No tienes derechos suficientes para mostrar este componente.",
+    "btNotConnected": "La aplicación no está conectada a un territorio comercial."
+  },
+  "Home": {
+    "welcome": "Bienvenido",
+    "intro": "<uu5string/>Esta pequeña y sencilla aplicación proporciona opciones para crear una lista de compras, que puedes actualizar, compartir y completar una vez que se hayan comprado todos los artículos de la lista.",
+    "clientSide": "<uu5string/>Bibliotecas <Uu5Elements.Link href=\"https://uuapp.plus4u.net/uu-bookkit-maing01/05ecbf4e8bca405290b1a6d4cee8813a/book\" target=\"_blank\">uu5</ Uu5Elements.Link> y <Uu5Elements.Link href=\"https://uuapp.plus4u.net/uu-bookkit-maing01/83c1406c4fc541dba975941424106318/book\" target=\"_blank\">uuPlus4U5</Uu5Elements.Link> son utilizado para el desarrollo del lado del cliente.",
+    "serverSide": "<uu5string/>Es necesario inicializar el espacio de trabajo de la aplicación para ejecutar el lado del servidor. Consulte el manual <Uu5Elements.Link href=\"https://uuapp.plus4u.net/uu-bookkit-maing01/e884539c8511447a977c7ff070e7f2cf/book /page?code=stepByStepApp\" target=\"_blank\">Guía para desarrolladores de plantillas uuApp</Uu5Elements.Link>",
+    "numList": "Número de su(s) lista(s): ",
+    "latest": "Última lista de actualizaciones: "
+  },
+  "InitAppWorkspace": {
+    "notAuthorized": "No tienes derechos suficientes para utilizar la aplicación.",
+    "formHeader": "Inicializar uuApp",
+    "formHeaderInfo": "<uu5string/>Su uuApp se está ejecutando, pero requiere inicialización. Si necesita ayuda para completar este formulario, consulte\n<Uu5Elements.Link target=\"_blank\" href=\"#\"> Documentación</Uu5Elements.Link>.",
+    "notAuthorizedForInit": "La aplicación se está ejecutando pero aún no se ha inicializado y no tienes suficientes derechos para hacerlo.",
+    "uuBtLocationUriLabel": "uuBusinessTerritory ubicación",
+    "uuBtLocationUriInfo": "Uri de la ubicación uuBt donde se creará AWSC",
+    "nameLabel": "Nombre",
+    "initialize": "Inicializar"
+  },
+  "Menu": {
+    "home": "Hogar",
+    "about": "Acerca de la aplicación"
+  },
+  "ShopList": {
+    "new": "Nueva lista de compras",
+    "myLists": "Mis listas de compras",
+    "archived": "Listas de compras completadas",
+    "sharedLists": "Listas de compras compartidas"
+  },
+  "createForm": {
+    "createButton": "Crear nueva lista de compras",
+    "cancelButt": "Cancelar",
+    "shopListName": "Nombre de la lista de compras",
+    "shopListDesc": "Descripción del distrito comercial",
+    "ing": "Ingredientes",
+    "quantity": "Cantidad"
+  },
+  "completedLists": {
+    "compListsName": "Listas de compras completadas",
+    "compListsDesc": "Tus listas de compras marcadas como completadas."
+  },
+  "myLists": {
+    "myListsTitle": "My shopping lists",
+    "myListsDesc": "My shopping lists",
+    "myListsUpdNotImpl": "Shopping list update is not implemented yet.",
+    "myListsShowListNotImpl": "Showing shopping list is not implemented yet.",
+    "myListsComplNotImpl": "Complete function is not implemented yet.",
+    "myListsErrDelete": "Error deleting shopping list",
+    "myListsCantDelete": "Cannot delete selected shopping list!",
+    "myListsShopListDeleted": "Shopping list: ${ShopListData.data.name} has been deleted.",
+    "myListsErrorUpd": "Error updating shopping list",
+    "myListsUpdateFailed": "Shopping list update failed!",
+    "myListsErrloadNextPage": "Error loading next page",
+    "myListsPageLoadFail": "Page loading failed!",
+    "myListsErrorDispl": "Error displaying required shopping list",
+    "myListsCantbeShown": "Shopping list cannot be shown!",
+    "myListsCantCompl1": "Cannot complete the list",
+    "myListsCantCompl2": "Shopping list cannot be completed!",
+    "myListsOwner": "Owner:",
+    "myListsMembers": "Shared:"
+  },
+  "tooltips": {
+    "tooltipUpdate": "Actualizar",
+    "tooltipDelete": "Borrar",
+    "tooltipComplete": "Mover a listas completadas"
+  }
+}

@@ -1,5 +1,5 @@
 //@@viewOn:imports
-import { createVisualComponent, Utils, Content } from "uu5g05";
+import { createVisualComponent, Utils, Content, Lsi, useLsi } from "uu5g05";
 import Config from "./config/config.js";
 import WelcomeRow from "../bricks/welcome-row.js";
 import RouteBar from "../core/route-bar.js";
@@ -43,13 +43,18 @@ const CompletedList = createVisualComponent({
     //@@viewOn:render
     const attrs = Utils.VisualComponent.getAttrs(props, Css.main());
     //const currentNestingLevel = Utils.NestingLevel.getNestingLevel(props, CompletedList);
+    //const lsi = useLsi(importLsi, [completedLists]);
 
     return (
       //currentNestingLevel ? (
       <div {...attrs}>
         <RouteBar />
-        <WelcomeRow>Completed shopping Lists</WelcomeRow>
-        <div>Your shopping lists marked as completed.</div>
+        <WelcomeRow>
+          <Lsi import={importLsi} path={["completedLists", "compListsName"]} />
+        </WelcomeRow>
+        <div>
+          <Lsi import={importLsi} path={["completedLists", "compListsDesc"]} />
+        </div>
       </div>
     ); //null;
     //@@viewOff:render

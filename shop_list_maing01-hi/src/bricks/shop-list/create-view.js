@@ -1,5 +1,7 @@
 //@@viewOn:imports
-import { createVisualComponent, PropTypes, Utils, useState } from "uu5g05";
+import { createVisualComponent, PropTypes, Utils, useState, Lsi } from "uu5g05";
+//import Uu5Elements from "uu5g05-elements";
+import importLsi from "../../lsi/import-lsi.js";
 import { Button, useAlertBus } from "uu5g05-elements";
 import CreateForm from "./create-form.js";
 import Config from "./config/config.js";
@@ -16,7 +18,7 @@ const Mode = {
 function CreateButton(props) {
   return (
     <Button {...props} colorScheme="primary" significance="highlighted">
-      Create new list
+      <Lsi import={importLsi} path={["createForm", "createButton"]} />
     </Button>
   );
 }
@@ -48,7 +50,7 @@ const CreateView = createVisualComponent({
       let list;
 
       try {
-        list = await props.ShopListDataList.handlerMap.create(event.data.value); 
+        list = await props.ShopListDataList.handlerMap.create(event.data.value);
         //list = props.onCreate(event.data.value);
       } catch (error) {
         CreateView.logger.error("Error while creating shopping list!", error);
